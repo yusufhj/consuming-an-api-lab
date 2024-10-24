@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    <!-- 
+    {
+    "coord": {
+        "lon": -82.0964,
+        "lat": 26.9905
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 66.88,
+        "feels_like": 67.6,
+        "temp_min": 66.06,
+        "temp_max": 69.04,
+        "pressure": 1016,
+        "humidity": 92,
+        "sea_level": 1016,
+        "grnd_level": 1015
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 5.75,
+        "deg": 30
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1729757892,
+    "sys": {
+        "type": 2,
+        "id": 2035464,
+        "country": "US",
+        "sunrise": 1729769601,
+        "sunset": 1729810283
+    },
+    "timezone": -14400,
+    "id": 0,
+    "name": "Port Charlotte",
+    "cod": 200
+}
+    -->
+
+    <h1>The Weather Forecast for <%= data.name %></h1>
+    <h2>Coordinates at Latitude: <%= data.coord.lat %> and Longitude: <%= data.coord.lon %></h2>
+    <h2>Weather: <%= data.weather[0].main %> with <%= data.weather[0].description %></h2>
+    <h2>Temperature: <%= data.main.temp %>°F</h2>
+    <h2>Feels Like: <%= data.main.feels_like %>°F</h2>
+    <h2>High: <%= data.main.temp_max %>°F</h2>
+    <h2>Low: <%= data.main.temp_min %>°F</h2>
+    <h2>Pressure: <%= data.main.pressure %> hPa</h2>
+    <h2>Humidity: <%= data.main.humidity %>%</h2>
+    <h2>Visibility: <%= data.visibility %> meters</h2>
+    <h2>Wind Speed: <%= data.wind.speed %> mph</h2>
+    <h2>Wind Direction: <%= data.wind.deg %>°</h2>
+    <h2>Cloud Cover: <%= data.clouds.all %>%</h2>
+    <h2>Sunrise: <%= new Date(data.sys.sunrise * 1000).toLocaleTimeString() %></h2>
+    <h2>Sunset: <%= new Date(data.sys.sunset * 1000).toLocaleTimeString() %></h2>
+    <a href="/">Back</a>
+</body>
+</html>
